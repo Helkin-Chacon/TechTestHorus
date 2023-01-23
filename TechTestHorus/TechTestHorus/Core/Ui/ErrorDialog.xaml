@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                  xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+                 xmlns:local1="clr-namespace:TechTestHorus.Core.Ui"    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechTestHorus.Core.Ui.ErrorDialog">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="False"
+            PositionIn="{OnIdiom Phone=Bottom,
+                                 Tablet=Center}"
+            PositionOut="{OnIdiom Phone=Bottom,
+                                  Tablet=Center}"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+    <ui:MaterialCard
+        Margin="{OnIdiom Phone='0,0,0,-20',
+                         Tablet='350,0,350,-20'}"
+        BackgroundColor="White"
+        CornerRadius="20"
+        VerticalOptions="{OnIdiom Phone=End,
+                                  Tablet=Center}">
+        <Grid Margin="0,0,0,15" RowDefinitions="Auto,Auto,Auto">
+            <Image
+                x:Name="icon_close"
+                Grid.Row="0"
+                Margin="0,10,0,0"
+                BackgroundColor="red"
+                HorizontalOptions="End"
+                VerticalOptions="Center">
+               
+            </Image>
+            <Label
+                x:Name="lbltitle"
+                Grid.Row="1"
+                Margin="{OnPlatform Android='30,0,30,0',
+                                    iOS='30,0,30,0'}"
+                FontFamily="BoldFont"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                Text="Select days"/>
+            <Label
+                x:Name="lblsubtitle"
+                Grid.Row="2"
+                Margin="{OnPlatform Android='30,35,30,0',
+                                    iOS='30,35,30,0'}"
+                FontFamily="LightFont"
+                FontSize="12"
+                HorizontalTextAlignment="Center"
+                Text="Test" />
+
+            <local1:CustomButton
+                x:Name="button"
+                Grid.Row="3"                         
+                Margin="{OnPlatform Android='30,50,30,0',
+                                    iOS='20,50,20,0'}"            
+                Text="Ok" />
+
+
+        </Grid>
+    </ui:MaterialCard>
+</pages:PopupPage>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"             
+              ios:Page.UseSafeArea="false"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:converters="clr-namespace:TechTestHorus.Core.Converters"
+         xmlns:local="clr-namespace:TechTestHorus.Core.Resources.CustomMarckupExtension;assembly=TechTestHorus"      NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource CLightGray}"
+             x:Name="DashboardPage"
+             x:Class="TechTestHorus.Modules.Ui.Login.DashBoardPhonePage">
+    
+    <ContentPage.Resources>
+        <converters:PercentajeConverter x:Key="percentajeConverter"></converters:PercentajeConverter>
+        <converters:BackgroundCardChallengeConverter x:Key="BackgroundColorConverter"></converters:BackgroundCardChallengeConverter>
+        <converters:TextColorCardTitleChallengeConverter x:Key="textColorTitleConverter"></converters:TextColorCardTitleChallengeConverter>
+        <converters:TextColorCardSubtitleConverter x:Key="textColorSubitleConverter"></converters:TextColorCardSubtitleConverter>
+        <converters:ImageCardChallengeConverter x:Key="imageConverter"></converters:ImageCardChallengeConverter>
+        <converters:ProgressColorIndicatorConverse x:Key="progressColorConverter"></converters:ProgressColorIndicatorConverse>
+        
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <yummy:PancakeView BackgroundColor="{x:StaticResource PinkButton}"
+                                       HeightRequest="140" WidthRequest="140" 
+                                       TranslationX="-70"
+                                       Rotation="25"
+                                       CornerRadius="25"                           
+                                       Opacity="0.5"
+                                       HorizontalOptions="Start" 
+                                       VerticalOptions="Start"></yummy:PancakeView>
+
+            <yummy:PancakeView BackgroundColor="{x:StaticResource GreenBackground}"
+                                       HeightRequest="250" WidthRequest="220" 
+                                       TranslationX="70"
+                                       Rotation="-25"
+                                       CornerRadius="25"                           
+                                       Opacity="0.5"
+                                       HorizontalOptions="End" 
+                                       VerticalOptions="End"></yummy:PancakeView>
+
+            <yummy:PancakeView BackgroundColor="{x:StaticResource GreenBackground}"
+                                       HeightRequest="70" WidthRequest="70" 
+                                      
+                                       CornerRadius="35"                           
+                                       Opacity="0.5"
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center"></yummy:PancakeView>
+            <ScrollView>
+                
+                <StackLayout>
+                    <Image WidthRequest="25"
+                       HorizontalOptions="Start"
+                       HeightRequest="25"
+                       Margin="15,20,0,0"
+                       
+                       Source="{local:ImageResource TechTestHorus.Core.Resources.back_b.png}"
+                               >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{ Binding BackCommand}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Grid>
+                        <Label Text="Retos"
+                       Margin="15,0 ,0,10"
+                       TextColor="{StaticResource DarkGrayTitles}"
+                       Style="{StaticResource Bold24}"></Label>
+                        <Label Grid.Column="1"
+                           Style="{StaticResource Regular14}"
+                        Margin="15,0,20,0"
+                           VerticalOptions="End"
+                           HorizontalOptions="End"
+                           HorizontalTextAlignment="End">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding CompletedChallenge}" TextColor="{StaticResource PinkButton}"   />
+
+                                    <Span Text="/" />
+                                    <Span Text="{Binding TotalChallenge}" TextColor="{StaticResource CDarkGray}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                    </Grid>
+                    <StackLayout  Margin="{OnPlatform iOS='0,10,0,10',
+                        Android='0,0,0,0'}"                  
+                                  BindableLayout.ItemsSource="{Binding ChallengesList}"           
+                                  Orientation="Vertical">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Grid   RowDefinitions="Auto, Auto">
+                                    <yummy:PancakeView Margin="10,5,10,5"
+                                       Padding="20,15,20,15"
+                                       VerticalOptions="Start"
+                                       CornerRadius="15"                                                              
+                                       BackgroundColor="{Binding IsSelected, Converter={x:StaticResource BackgroundColorConverter}}">
+                                        <yummy:PancakeView.Shadow>
+                                            <yummy:DropShadow Color="{StaticResource CLightGray}" Offset="0,1" />
+                                        </yummy:PancakeView.Shadow>
+                                        <yummy:PancakeView.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding BindingContext.SelectChallengeCommand, Source={x:Reference DashboardPage}}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                        </yummy:PancakeView.GestureRecognizers>
+                                        <StackLayout>
+                                            <Grid>
+                                                <Label Text="{Binding Title}"
+                                                       TextColor="{Binding IsSelected, Converter={x:StaticResource textColorTitleConverter}}"                                                                              
+                                                       Style="{StaticResource Bold16}"
+                                                       Grid.Column="0">
+                                                    
+                                                </Label>
+                                                <Image x:Name="arrowIcon" WidthRequest="22" HeightRequest="22" Grid.Column="1" HorizontalOptions="End"
+                                                       Source="{Binding IsSelected, Converter={StaticResource imageConverter}}">
+                                                    
+                                                </Image>
+                                            </Grid>
+                                            <Label Text="{Binding Description}"
+                                                   HorizontalOptions="Start" TextColor="{Binding IsSelected, Converter={x:StaticResource textColorSubitleConverter}}"                                   
+                                                   Style="{StaticResource Regular12}"></Label>
+                                            
+                                            <Grid TranslationY="{OnPlatform Android=12, iOS=5}">
+                                                <Label
+                                                    Grid.Column="0"
+                                                    Style="{StaticResource Regular12}"
+                                                    VerticalOptions="Start"
+                                                    HorizontalOptions="Start" TextColor="{Binding IsSelected, Converter={x:StaticResource textColorSubitleConverter}}"
+                                                    HorizontalTextAlignment="Center">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{Binding CurrentPoints}"    />                                                            
+                                                            <Span Text="/" />
+                                                            <Span Text="{Binding TotalPoints}" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                                <Label 
+                                                    Style="{StaticResource Regular12}"
+                                                    VerticalOptions="Start"
+                                                    HorizontalOptions="End"
+                                                    Grid.Column="1"
+                                                    
+                                                    TextColor="{Binding IsSelected, Converter={StaticResource progressColorConverter}}"
+                                                    
+                                                    HorizontalTextAlignment="Center">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{Binding Percentaje}" />
+                                                            
+                                                            <Span Text="%" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                    
+                                                </Label>
+                                            </Grid>
+                                            <ProgressBar
+                                                VerticalOptions="End"
+                                                Progress="{Binding Percentaje, Converter={x:StaticResource percentajeConverter}}"                                             
+                                                Grid.ColumnSpan="2"
+                                                ProgressColor="{Binding IsSelected, Converter={StaticResource progressColorConverter}}"></ProgressBar>
+                                        </StackLayout>
+
+                                    </yummy:PancakeView>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+    

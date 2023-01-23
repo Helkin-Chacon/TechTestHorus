@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             x:Class="TechTestHorus.Core.Ui.CustomEntry">
+
+    <Grid  >
+
+        <yummy:PancakeView CornerRadius="13" HeightRequest="50"  BackgroundColor="{x:StaticResource CLightGray}" >
+            <yummy:PancakeView.Shadow>
+                <yummy:DropShadow Color="{StaticResource CLightGray}" Offset="0,1" />
+            </yummy:PancakeView.Shadow>
+            <Grid ColumnDefinitions="*, Auto" >
+
+               
+                    <ui:MaterialTextField
+                         x:Name="txt"
+                         Grid.Row="0"
+                         Margin="{OnPlatform Android='0,-15,0,8',
+                                        iOS='10,-15,0,7'}"
+                         AlwaysShowUnderline="false"
+                         CardBackgroundColor="#F7F6F6"
+          
+                         ClassId="txt"
+                         InputType="Default"
+                         PlaceholderFontFamily="LightFont"
+                         ReturnType="Next"
+                         ShouldAnimateUnderline="false"
+    
+                         VerticalOptions="Center" />
+                    <Grid 
+                    x:Name="rightIconGrid"
+                    Margin="{OnPlatform Android='0,0,10,0',
+                                        iOS='0,0,10,0'}"
+                    ColumnSpacing="0"
+                  Grid.Column="1"
+                    HeightRequest="25"
+                    HorizontalOptions="End"
+                    IsVisible="false"
+                    RowSpacing="0"
+                    VerticalOptions="Center"
+                    WidthRequest="25">
+                <Image x:Name="rightIcon" WidthRequest="22" HeightRequest="22">
+
+                </Image>
+                    </Grid>
+
+            </Grid>
+            </yummy:PancakeView>
+
+        </Grid>
+</ContentView>

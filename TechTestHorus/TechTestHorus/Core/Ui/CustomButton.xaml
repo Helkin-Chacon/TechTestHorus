@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="TechTestHorus.Core.Ui.CustomButton">
+    <Grid>
+        <Yummy:PancakeView BackgroundColor="{x:StaticResource PinkButton}"
+                           CornerRadius="13"
+                           x:Name="NormalType"
+                           HeightRequest="50">
+            <Yummy:PancakeView.Shadow>
+                <Yummy:DropShadow Color="{StaticResource CLightGray}" Offset="0,1" />
+
+            </Yummy:PancakeView.Shadow>
+            <Label x:Name="NameLbl"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Style="{StaticResource Regular16}"></Label>
+        </Yummy:PancakeView>
+        <Yummy:PancakeView BackgroundColor="{x:StaticResource CLightGray}"
+                           x:Name="SocialNetwork"
+                           IsVisible="false"
+                           HorizontalOptions="Center"
+                           CornerRadius="25"
+                           WidthRequest="50"
+                           HeightRequest="50">
+            <Yummy:PancakeView.Shadow>
+                <Yummy:DropShadow Color="{StaticResource CLightGray}" Offset="0,1" />
+            </Yummy:PancakeView.Shadow>
+            <Image x:Name="IconSocialNetwork" WidthRequest="25" HeightRequest="25" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+        </Yummy:PancakeView>
+
+    </Grid>
+</ContentView>

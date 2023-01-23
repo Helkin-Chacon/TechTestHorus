@@ -1,0 +1,92 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Fonts\Poppins-Bold.ttf" />
+    <None Remove="Assets\Poppins-Bold.ttf" />
+    <None Remove="Assets\Poppins-Regular.ttf" />
+    <None Remove="Core\Resources\arrow_right_g.png" />
+    <None Remove="Core\Resources\arrow_right_w.png" />
+    <None Remove="Core\Resources\background.jpg" />
+    <None Remove="Core\Resources\back_b.png" />
+    <None Remove="Core\Resources\eye_b.png" />
+    <None Remove="Core\Resources\eye_none_b.png" />
+    <None Remove="Core\Resources\facebook_g.png" />
+    <None Remove="Core\Resources\instagram_g.png" />
+    <None Remove="Core\Resources\logo_w.png" />
+    <None Remove="Xamarin.Essentials.Interfaces" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Poppins-Bold.ttf" />
+    <EmbeddedResource Include="Assets\Poppins-Regular.ttf" />
+    <EmbeddedResource Include="Core\Resources\arrow_right_g.png" />
+    <EmbeddedResource Include="Core\Resources\arrow_right_w.png" />
+    <EmbeddedResource Include="Core\Resources\background.jpg" />
+    <EmbeddedResource Include="Core\Resources\back_b.png" />
+    <EmbeddedResource Include="Core\Resources\eye_b.png" />
+    <EmbeddedResource Include="Core\Resources\eye_none_b.png" />
+    <EmbeddedResource Include="Core\Resources\facebook_g.png" />
+    <EmbeddedResource Include="Core\Resources\instagram_g.png" />
+    <EmbeddedResource Include="Core\Resources\logo_w.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Flurl" Version="3.0.7" />
+    <PackageReference Include="Flurl.Http" Version="3.2.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+    <PackageReference Include="XF.Material" Version="1.7.8" />
+    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Imgs\" />
+    <Folder Include="Core\Behaviors\" />
+    <Folder Include="Core\Helpers\" />
+    <Folder Include="Core\Router\" />
+    <Folder Include="Modules\Models\Login\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Fonts\Poppins-Bold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Core\Ui\CardChallengueView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Core\Ui\CustomButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Core\Ui\CustomEntry.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Core\Ui\ErrorDialog.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Core\Ui\LoadingDialog.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Modules\Ui\Dashboard\DashBoardPhonePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Modules\Ui\Login\LoghinPhonePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

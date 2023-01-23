@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{A39A8541-46C8-4362-8260-82CB815803A4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TechTestHorus/TechTestHorus/App.xaml.cs">
+    <Files>
+      <File FileName="TechTestHorus/TechTestHorus/Modules/Ui/Login/LoghinPhonePage.xaml" Line="41" Column="1" />
+      <File FileName="../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Legacy.targets" />
+      <File FileName="TechTestHorus/TechTestHorus/Core/Ui/CustomEntry.xaml" Line="43" Column="80" />
+      <File FileName="TechTestHorus/TechTestHorus/Core/Ui/CustomEntry.xaml.cs" Line="80" Column="190" />
+      <File FileName="TechTestHorus/TechTestHorus.iOS/AppDelegate.cs" Line="43" Column="1" />
+      <File FileName="TechTestHorus/TechTestHorus/App.xaml.cs" Line="28" Column="1" />
+      <File FileName="TechTestHorus/TechTestHorus/App.xaml" Line="59" Column="17" />
+      <File FileName="TechTestHorus/TechTestHorus/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="TechTestHorus/TechTestHorus/Core/Router/RouterNavigation.cs" Line="14" Column="2" />
+      <File FileName="TechTestHorus/TechTestHorus.iOS/Main.cs" Line="14" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TechTestHorus" expanded="True">
+            <Node name="TechTestHorus" expanded="True">
+              <Node name="Core" expanded="True">
+                <Node name="Router" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True">
+                <Node name="App.xaml.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="TechTestHorus.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.TechTestHorus.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.86A39389-525D-48EE-A6AE-829B1CC84E74" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TechTestHorus.Android PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
