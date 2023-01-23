@@ -52,6 +52,21 @@ namespace TechTestHorus.Modules.ViewModels.Login
             
         });
 
+        public Command<object> FacebookCommand => new Command<object>(async (sender) =>
+        {
+            var error = new ErrorDialog("ButtonSelected:", "Facebook") { };
+            await PopupNavigation.Instance.PushAsync(error, true);
+        });
+        public Command<object> InstagramCommand => new Command<object>(async (sender) =>
+        {
+            var error = new ErrorDialog("ButtonSelected:", "Instagram") { };
+            await PopupNavigation.Instance.PushAsync(error, true);
+        });
+        public Command<object> SignUpCommand => new Command<object>(async (sender) => 
+        {
+            var error = new ErrorDialog("ButtonSelected:", "Registrarse") { };
+            await PopupNavigation.Instance.PushAsync(error, true);
+        });
         public Command<object> LoginCommand => new Command<object>(async (sender) =>
         {
             var loadingDialog = new LoadingDialog() { };

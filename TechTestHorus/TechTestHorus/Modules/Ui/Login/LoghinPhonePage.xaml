@@ -9,15 +9,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
              xmlns:ui="clr-namespace:TechTestHorus.Core.Ui" xmlns:uii="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              x:Class="TechTestHorus.Modules.Ui.Login.LoghinPhonePage">
-    <!--<ContentPage.Background>
-        --><!-- StartPoint defaults to (0,0) --><!--
-        <LinearGradientBrush EndPoint="0,1">
-            <GradientStop Color="White"
-                          Offset="0.9" />
-            <GradientStop Color="{StaticResource PinkButton}"
-                          Offset="1" />
-        </LinearGradientBrush>-->
-    <!--</ContentPage.Background>-->
+    
     <ContentPage.Content>
         <Grid RowDefinitions="0.4*, 0.6*">
         <yummy:PancakeView BackgroundColor="{x:StaticResource PinkButton}"
@@ -115,34 +107,40 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                             <Grid  RowDefinitions="0.3*, 0.3*, Auto, 0.3*" Margin="20,30,20,0" Grid.Row="1" >
 
                                 <ui:CustomButton ButtonType="Normal"
-                                             TextColorButton="White"
-                                         ClickCommand="{Binding LoginCommand}"
-                                             BackgroundColorButton="{StaticResource PinkButton}"
-                                             Text="Login">
+                                                 TextColorButton="White"
+                                                 ClickCommand="{Binding LoginCommand}"
+                                                 BackgroundColorButton="{StaticResource PinkButton}"
+                                                 Text="Login">
+                                    
                                 </ui:CustomButton>
 
                                 <Grid ColumnDefinitions="0.5*, 0.5*" Grid.Row="1">
                                     <ui:CustomButton  ButtonType="InstagramButton"
-                                                  Margin="0,10,15,0"
-                                                  HorizontalOptions="End">
+                                                      Margin="0,10,15,0"
+                                                      ClickCommand="{Binding InstagramCommand}"                                                      
+                                                      HorizontalOptions="End">
 
                                     </ui:CustomButton>
 
                                     <ui:CustomButton ButtonType="FacebookButton"
-                                                  Margin="15,10,0,0"
-                                                 Grid.Column="1"
-                                                 HorizontalOptions="Start">
+                                                     Margin="15,10,0,0"
+                                                     Grid.Column="1"
+                                                     ClickCommand="{Binding FacebookCommand}"                                                                                                           
+                                                     HorizontalOptions="Start">
 
                                     </ui:CustomButton>
                                 </Grid>
                                 <Line HeightRequest="1"
-                              Grid.Row="2"
-                              VerticalOptions="Center"
-                                  BackgroundColor="{StaticResource CLightGray}"
-                                  HorizontalOptions="Fill"
-                                  Margin="0,10,0,10"></Line>
+                                      Grid.Row="2"
+                                      VerticalOptions="Center"
+                                      BackgroundColor="{StaticResource CLightGray}"
+                                      HorizontalOptions="Fill"
+                                      Margin="0,10,0,10">
+                                    
+                                </Line>
                                 <ui:CustomButton ButtonType="Normal"
                                          Grid.Row="3"
+                                                 ClickCommand="{Binding SignUpCommand}"
                                              BackgroundColorButton="{StaticResource CLightGray}"
                                              TextColorButton="{StaticResource CDarkGray}"
                                                  Margin="0,0,0,20"

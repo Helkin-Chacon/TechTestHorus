@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Assets\Imgs\**" />
+    <Compile Remove="Core\Behaviors\**" />
+    <Compile Remove="Core\Helpers\**" />
+    <EmbeddedResource Remove="Assets\Imgs\**" />
+    <EmbeddedResource Remove="Core\Behaviors\**" />
+    <EmbeddedResource Remove="Core\Helpers\**" />
+    <None Remove="Assets\Imgs\**" />
+    <None Remove="Core\Behaviors\**" />
+    <None Remove="Core\Helpers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Assets\Fonts\Poppins-Bold.ttf" />
     <None Remove="Assets\Poppins-Bold.ttf" />
     <None Remove="Assets\Poppins-Regular.ttf" />
@@ -55,9 +67,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Imgs\" />
-    <Folder Include="Core\Behaviors\" />
-    <Folder Include="Core\Helpers\" />
     <Folder Include="Core\Router\" />
     <Folder Include="Modules\Models\Login\" />
   </ItemGroup>
